@@ -12,14 +12,16 @@ const Routes = () => (
       <Route exact path="/" component={ConnectedCountryListContainer} />
       <Route
         path="/Countries/:countryCountry"
-        render={({ match }) => (
-          <CountryDetails
-            country={
-            // eslint-disable-next-line max-len
-            store.getState().dataState.data.Countries.find(country => country.Country === match.params.countryCountry)
-          }
-          />
-        )}
+        render={({ match }) => {
+          const { dataState } = store.getState();
+          return (
+            <CountryDetails
+              country={
+          dataState.data.Countries.find(country => country.Country === match.params.countryCountry)
+        }
+            />
+          );
+        }}
       />
     </Switch>
   </Router>
