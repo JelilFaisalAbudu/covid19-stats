@@ -1,4 +1,4 @@
-/* eslint-disable */
+import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import doFetchData from '../redux/actions/dataActions';
@@ -19,12 +19,13 @@ const CountryListContainer = ({ dataState, fetchData }) => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(data);
-  return loading ? (
-    <h2>Loading...</h2>
-  ) : error ? (
-    <h2>{error}</h2>
-  ) : (
+
+  if (loading) {
+    return (<h2>Loading...</h2>);
+  } if (error) {
+    return (error);
+  }
+  return (
     <div>
       <Search
         handleChange={handleChange}
@@ -34,24 +35,25 @@ const CountryListContainer = ({ dataState, fetchData }) => {
       </Search>
       <CountryList countries={(data.Countries).filter(byQuery(query))} />
     </div>
-  )
+  );
 };
 
-const mapStateToPropsCountryList = (state) => {
-  return {
-    dataState: state.dataState,
-  }
-}
+const mapStateToPropsCountryList = state => ({
+  dataState: state.dataState,
+});
 
-const mapDispatchToPropsCountryList = dispatch => {
-  return {
-    fetchData: () => dispatch(doFetchData())
-  }
-}
+const mapDispatchToPropsCountryList = dispatch => ({
+  fetchData: () => dispatch(doFetchData()),
+});
 
 const ConnectedCountryListContainer = connect(
   mapStateToPropsCountryList,
-  mapDispatchToPropsCountryList
+  mapDispatchToPropsCountryList,
 )(CountryListContainer);
+
+CountryListContainer.propTypes = {
+  dataState: PropTypes.objectOf(PropTypes.any).isRequired,
+  fetchData: PropTypes.func.isRequired,
+};
 
 export default ConnectedCountryListContainer;
