@@ -5,18 +5,20 @@ import CountryListContainer from '../containers/CountryListContainer';
 import CountryDetails from './CountryDetails';
 import { initialState as countries } from '../redux/reducers/data';
 
-export const Routes = () => (
+const Routes = () => (
   <Router>
     <Navbar />
     <Switch>
-      <Route exact path="/" component={CountryListContainer} />
-      <Route exact path="/home" component={CountryListContainer} />
+      <Route exact path="/">
+        <CountryListContainer countries={countries.data.Countries} />
+      </Route>
       <Route
         path="/Countries/:countryCountry"
         render={({ match }) => (
           <CountryDetails
             country={
-            countries.find(country => country.Country === match.params.countryCountry)
+            // eslint-disable-next-line max-len
+            countries.data.Countries.find(country => country.Country === match.params.countryCountry)
           }
           />
         )}
