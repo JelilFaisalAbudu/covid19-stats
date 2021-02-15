@@ -2,7 +2,7 @@
 import '../css/Country.css';
 import cardImage from'../images/coronavirusImage1.jpg';
 
-const Country = ({ country }) => (
+const Country = ({ country, children }) => (
   <div className="column country">
     <div className="card">
       <img src={cardImage} alt="Mike" style={{width: '100%' }} />
@@ -14,7 +14,13 @@ const Country = ({ country }) => (
             {country.NewConfirmed}
           </span>
         </div>
-        <p><button className="button">View Details</button></p>
+        <p>
+          <button
+            className="button"
+            >
+              {children}
+          </button>
+        </p>
       </div>
     </div>
   </div>

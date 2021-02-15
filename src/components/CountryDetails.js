@@ -1,4 +1,6 @@
 /* eslint-disable  */
+import { Link } from 'react-router-dom';
+
 const CountryDetails = ({ country }) => (
 
   <div>
@@ -11,6 +13,9 @@ const CountryDetails = ({ country }) => (
     <div>
     Total Confirm Case: {country.TotalConfirmed}
     </div>
+    <Link to="/">
+      <button>Back</button>
+    </Link>
   </div>
 );
 

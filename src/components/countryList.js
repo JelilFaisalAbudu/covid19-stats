@@ -1,5 +1,7 @@
 /* eslint-disable */
 
+import {  Link } from 'react-router-dom';
+
 import React from 'react';
 import Country from './Country';
 
@@ -9,9 +11,12 @@ const CountryList = ({ countries }) => (
     justifyContent: 'space-evenly',
   }}>
     {countries.map(country => (
-    <Country key={country.ID} country={country}/>
+    <Country key={country.ID} country={country}>
+      <Link to={`/countries/${country.Country}`}>
+        View Details
+      </Link>
+    </Country>
   ))}
   </div>
 );
-
 export default CountryList;
