@@ -1,11 +1,11 @@
-/* eslint-disable */
+import PropTypes from 'prop-types';
 import '../css/Country.css';
-import cardImage from'../images/coronavirusImage1.jpg';
+import cardImage from '../images/coronavirusImage1.jpg';
 
 const Country = ({ country, children }) => (
   <div className="column country">
     <div className="card">
-      <img src={cardImage} alt="Mike" style={{width: '100%' }} />
+      <img src={cardImage} alt="Mike" style={{ width: '100%' }} />
       <div className="container">
         <h2 className="country-name">{country.Country}</h2>
         <div className="record-wrapper">
@@ -16,14 +16,20 @@ const Country = ({ country, children }) => (
         </div>
         <p>
           <button
+            type="button"
             className="button"
-            >
-              {children}
+          >
+            {children}
           </button>
         </p>
       </div>
     </div>
   </div>
 );
+
+Country.propTypes = {
+  Country: PropTypes.string,
+  NewConfirmed: PropTypes.string,
+}.isRequired;
 
 export default Country;
