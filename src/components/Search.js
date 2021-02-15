@@ -1,4 +1,4 @@
-/* eslint-disable */
+import PropTypes from 'prop-types';
 
 const Search = ({ query, handleChange, children }) => (
   <div>
@@ -12,5 +12,13 @@ const Search = ({ query, handleChange, children }) => (
     />
   </div>
 );
+
+Search.propTypes = {
+  query: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  children: PropTypes.element.isRequired,
+};
+
+Search.defaultProps = { query: '' };
 
 export default Search;
