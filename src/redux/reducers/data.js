@@ -1,6 +1,11 @@
-const GET_DATA = 'GET_DATA';
+import {
+  FETCH_DATA_REQUEST,
+  FETCH_DATA_SUCCESS,
+  FETCH_DATA_FAILURE,
+} from '../actions/actionTypes';
 
 export const initialState = {
+  loading: false,
   data: {
     ID: '194666c1-5e3c-4b04-b674-ba0c53efeca9',
     Message: '',
@@ -39,15 +44,29 @@ export const initialState = {
       }],
 
   },
+  error: '',
 };
 
 const dataReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_DATA:
+    case FETCH_DATA_REQUEST:
       return {
         ...state,
-        data: action.payload,
-        isLoadingCountries: false,
+        loading: true,
+      };
+
+    case FETCH_DATA_SUCCESS:
+      return {
+        ...state,
+        data: action.payload.data,
+        loading: false,
+      };
+
+    case FETCH_DATA_FAILURE:
+      return {
+        ...state,
+        error: action.payload.error,
+        loading: false,
       };
 
     default:
