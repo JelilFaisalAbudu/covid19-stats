@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import '../css/Search.css';
 
 const Search = ({ query, handleChange, children }) => (
-  <div>
+  <div className="search-wrapper">
     <input
       type="text"
       className="form-control"
