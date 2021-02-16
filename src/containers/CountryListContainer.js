@@ -5,6 +5,7 @@ import doFetchData from '../redux/actions/dataActions';
 import CountryList from '../components/countryList';
 import Search from '../components/Search';
 import { byQuery } from '../helpers/byQuery';
+import Preloader from '../components/Preloader';
 
 const CountryListContainer = ({ dataState, fetchData }) => {
   const { loading, data, error } = dataState;
@@ -21,7 +22,7 @@ const CountryListContainer = ({ dataState, fetchData }) => {
   }, []);
 
   if (loading) {
-    return (<h2>Loading...</h2>);
+    return (<Preloader />);
   } if (error) {
     return (error);
   }
