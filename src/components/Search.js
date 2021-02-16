@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import '../css/Search.css';
 
 const Search = ({ query, handleChange, children }) => (
-  <div>
+  <div className="search-wrapper">
     <input
       type="text"
       className="form-control"
@@ -16,7 +17,7 @@ const Search = ({ query, handleChange, children }) => (
 Search.propTypes = {
   query: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 Search.defaultProps = { query: '' };

@@ -1,0 +1,9 @@
+.search-wrapper {
+  display: flex;
+  align-items: stretch;
+  margin: 1em;
+}
+
+.search-wrapper > input {
+  flex-grow: 1;
+}
