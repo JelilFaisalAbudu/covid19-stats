@@ -1,24 +1,55 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../css/CountryDetails.css';
 
 const CountryDetails = ({ country }) => (
-
-  <div>
-    <div>
-      Country:
-      {' '}
-      {country.Country}
+  <div className="table-wrapper">
+    <div className="table-title">
+      <h3>
+        Covid-19 Data -
+        {' '}
+        {country.Country}
+      </h3>
+      <spa>
+        Last Update:
+        {' '}
+        {`${new Date(country.Date)}`}
+      </spa>
     </div>
-    <div>
-      New Confirm Case:
-      {' '}
-      {country.NewConfirmed}
-    </div>
-    <div>
-      Total Confirm Case:
-      {' '}
-      {country.TotalConfirmed}
-    </div>
+    <table className="table-fill">
+      <thead>
+        <tr>
+          <th className="text-left">Item</th>
+          <th className="text-left">Figures</th>
+        </tr>
+      </thead>
+      <tbody className="table-hover">
+        <tr>
+          <td className="text-left">New Confirmed</td>
+          <td className="text-left">{country.NewConfirmed}</td>
+        </tr>
+        <tr>
+          <td className="text-left">Total Confirmed</td>
+          <td className="text-left">{country.TotalConfirmed}</td>
+        </tr>
+        <tr>
+          <td className="text-left">New Deaths</td>
+          <td className="text-left">{country.NewDeaths}</td>
+        </tr>
+        <tr>
+          <td className="text-left">Total Deaths</td>
+          <td className="text-left">{country.TotalDeaths}</td>
+        </tr>
+        <tr>
+          <td className="text-left">New Recovered</td>
+          <td className="text-left">{country.NewRecovered}</td>
+        </tr>
+        <tr>
+          <td className="text-left">Total Recovered</td>
+          <td className="text-left">{country.TotalRecovered}</td>
+        </tr>
+      </tbody>
+    </table>
     <Link to="/">
       <button type="button">Back</button>
     </Link>
