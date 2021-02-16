@@ -1,17 +1,13 @@
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
-
 import React from 'react';
 import Country from './Country';
+import '../css/CountryList.css';
 
 const CountryList = ({ countries }) => (
   <div
     className="row"
-    style={{
-      display: 'flex',
-      justifyContent: 'space-evenly',
-    }}
   >
     {countries.map(country => (
       <Country key={country.ID} country={country}>
