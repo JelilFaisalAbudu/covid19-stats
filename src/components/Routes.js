@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import ConnectedCountryListContainer from '../containers/CountryListContainer';
 import CountryDetails from './CountryDetails';
 import store from '../redux/store';
+import Footer from './Footer';
 
 const Routes = () => (
   <Router>
@@ -28,9 +29,7 @@ const Routes = () => (
         />
       </Switch>
     </main>
-    <footer>
-      Footer Content
-    </footer>
+    <Footer />
   </Router>
 );
 
