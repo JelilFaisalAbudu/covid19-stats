@@ -10,11 +10,11 @@ const CountryDetails = ({ country }) => (
         {' '}
         {country.Country}
       </h3>
-      <spa>
+      <span>
         Last Update:
         {' '}
         {`${new Date(country.Date)}`}
-      </spa>
+      </span>
     </div>
     <table className="table-fill">
       <thead>
@@ -57,7 +57,7 @@ const CountryDetails = ({ country }) => (
 );
 
 CountryDetails.propTypes = {
-  country: PropTypes.objectOf(PropTypes.string).isRequired,
+  country: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default CountryDetails;
