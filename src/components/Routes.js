@@ -7,23 +7,30 @@ import store from '../redux/store';
 
 const Routes = () => (
   <Router>
-    <Navbar />
-    <Switch>
-      <Route exact path="/" component={ConnectedCountryListContainer} />
-      <Route
-        path="/Countries/:countryCountry"
-        render={({ match }) => {
-          const { dataState } = store.getState();
-          return (
-            <CountryDetails
-              country={
+    <header>
+      <Navbar />
+    </header>
+    <main>
+      <Switch>
+        <Route exact path="/" component={ConnectedCountryListContainer} />
+        <Route
+          path="/Countries/:countryCountry"
+          render={({ match }) => {
+            const { dataState } = store.getState();
+            return (
+              <CountryDetails
+                country={
           dataState.data.Countries.find(country => country.Country === match.params.countryCountry)
         }
-            />
-          );
-        }}
-      />
-    </Switch>
+              />
+            );
+          }}
+        />
+      </Switch>
+    </main>
+    <footer>
+      Footer Content
+    </footer>
   </Router>
 );
 
