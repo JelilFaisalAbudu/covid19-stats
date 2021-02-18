@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import '../css/CountryDetails.css';
 
 const CountryDetails = ({ country }) => (
@@ -50,9 +50,11 @@ const CountryDetails = ({ country }) => (
         </tr>
       </tbody>
     </table>
-    <Link to="/">
-      <button type="button">Back</button>
-    </Link>
+    <Router>
+      <Link to="/">
+        <button type="button">Back</button>
+      </Link>
+    </Router>
   </div>
 );
 
