@@ -15,7 +15,7 @@ const Routes = () => (
       <Switch>
         <Route exact path="/" component={ConnectedCountryListContainer} />
         <Route
-          path="/Countries/:countryCountry"
+          path="/countries/:countryCountry"
           render={({ match }) => {
             const { dataState } = store.getState();
             return (

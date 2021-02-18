@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes component renders the footer in the page 1`] = `ShallowWrapper {}`;
+
+exports[`Routes component renders the main tag in the page 1`] = `ShallowWrapper {}`;
+
+exports[`Routes component renders the nav in the page 1`] = `ShallowWrapper {}`;
