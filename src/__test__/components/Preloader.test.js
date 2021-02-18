@@ -5,13 +5,13 @@ import Preloader from '../../components/Preloader';
 
 const setup = () => shallow(<Preloader />);
 
-describe('App component', () => {
+describe('Preloader component', () => {
   let component;
   beforeEach(() => {
     component = setup();
   });
 
-  it('Should render', () => {
+  it('finds the preloader with id #loader', () => {
     const element = component.find('#loader');
     expect(element.length).toEqual(1);
   });
