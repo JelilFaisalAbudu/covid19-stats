@@ -17,9 +17,12 @@ const Search = ({ query, handleChange, children }) => (
 Search.propTypes = {
   query: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
-Search.defaultProps = { query: '' };
+Search.defaultProps = {
+  query: '',
+  children: '',
+};
 
 export default Search;
