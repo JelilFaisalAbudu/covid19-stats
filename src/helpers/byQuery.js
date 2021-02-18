@@ -1,5 +1,3 @@
-export const byQuery = query => item => item.Country.toLowerCase().includes(query.toLowerCase());
+const byQuery = query => item => item.Country.toLowerCase().includes(query.toLowerCase());
 
-export const dontImport = () => {
-
-};
+export default byQuery;
