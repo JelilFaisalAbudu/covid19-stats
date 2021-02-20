@@ -5,7 +5,7 @@ import cardImage from '../images/coronavirusImage1.jpg';
 const Country = ({ country, children }) => (
   <div className="column country">
     <div className="card">
-      <img src={cardImage} alt="Mike" style={{ width: '100%' }} />
+      <img src={cardImage} alt="covid-19" style={{ width: '100%' }} />
       <div className="container">
         <h2 className="country-name">{country.Country}</h2>
         <div className="record-wrapper">
