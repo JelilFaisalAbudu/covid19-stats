@@ -2,9 +2,11 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer';
-
+import { Provider } from 'react-redux';
+import { shallow } from 'enzyme';
+import '../setup/setupTests'
+import store from '../../redux/store';
 import CountryDetails from '../../components/CountryDetails';
-
 
 const country = {
   Country: 'ALA Aland Islands',
@@ -19,15 +21,17 @@ const country = {
   Date: '2020-04-05T06:37:00Z',
 };
 
+const setup = () => shallow(<Provider store={store}><CountryDetails /></Provider>);
+
 describe('Country Details', () => {
-  test('renders the back button', () => {
-    render(<CountryDetails country={country} />);
-    const textNode = screen.getByText(/Back/i);
-    expect(textNode).toBeInTheDocument();
+  let component;
+
+  beforeEach(() => {
+    component = setup();
   });
 
-  test('renders the app component correctly', () => {
-    const app = renderer.create(<CountryDetails country={country} />).toJSON();
-    expect(app).toMatchSnapshot();
+  test('renders the country details component correctly', () => {
+    const element = component.find('.table-wrapper');
+    expect(element).toMatchSnapshot();
   });
 });
