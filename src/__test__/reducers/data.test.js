@@ -5,15 +5,6 @@ import {
   doFetchDataFailure,
 } from '../../redux/actions/dataActions';
 
-// const initialState = {
-//   loading: true,
-//   data: {
-//     Global: {},
-//     Countries: [],
-//   },
-//   error: '',
-// };
-
 const incomingData = {
   Global: {},
   Countries: [
