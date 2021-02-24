@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './Navbar';
-import CountryList from './countryList';
-import CountryDetails from './CountryDetails';
+import CountryList from '../containers/countryList';
+import CountryDetails from '../containers/CountryDetails';
 import Footer from './Footer';
 
 const Routes = () => (
