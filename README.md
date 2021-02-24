@@ -2,9 +2,9 @@
 
 ## Overview
 
-> The **COVID-19 STATISTICS** app is a web app that gives a summary of updates on the current state of the Covid-19 pandemic across the world. The source of the data is from the [COVID-19 API](https://api.covid19api.com/summary) API. Every country is listed in the app with a detail page that shows the records of that particular country.
-> ***Note:*** You may get Zero(0) new confirm cases for your country at a point in time. This because the API is yet to receive the confirm result from your country.
->  
+>The **COVID-19 STATISTICS** app is a web app that gives a summary of updates on the current state of the Covid-19 pandemic across the world. The source of the data is from the [COVID-19 API](https://api.covid19api.com/summary) API. Every country is listed in the app with a detail page that shows the records of that particular country.
+>***Note:*** You may get Zero(0) new confirm cases for your country at a point in time. This because the API is yet to receive the confirm result from your country.
+> 
 <div align="center">
 
 [![View Code](https://img.shields.io/badge/View%20-Code-green)](https://github.com/JelilFaisalAbudu/covid19-stats)
@@ -42,8 +42,8 @@ See live on [Heroku](https://worldcovid19statistics.herokuapp.com/)
 
 ## Video Presentation(s) <a name = "video-presentations">
 
-### [Part 1](/)
-### [Part 2](/)
+### [Part 1](https://www.loom.com/share/c4a39d6933be406fa64d14083ba1f56d)
+### [Part 2](https://www.loom.com/share/a15bbdf22dff47c79787ece2d86e22cf)
 ## Available Scripts <a name= "available-scripts"></a>
 
 In the project directory, you can run:
