@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import doFetchData from '../redux/actions/dataActions';
-import Search from './Search';
+import Search from '../components/Search';
 import byQuery from '../helpers/byQuery';
-import Preloader from './Preloader';
-import Country from './Country';
+import Preloader from '../components/Preloader';
+import Country from '../components/Country';
 import '../css/CountryList.css';
 
 const CountryList = ({

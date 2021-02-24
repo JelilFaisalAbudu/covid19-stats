@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { shallow } from 'enzyme';
 import '../setup/setupTests';
 import store from '../../redux/store';
-import CountryDetails from '../../components/CountryDetails';
+import CountryDetails from '../../containers/CountryDetails';
 
 const setup = () => shallow(<Provider store={store}><CountryDetails /></Provider>);
 
