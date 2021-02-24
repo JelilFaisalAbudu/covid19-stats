@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../css/CountryDetails.css';
+import doFetchData from '../redux/actions/dataActions';
 
 const CountryDetails = ({ country }) => (
   <div className="table-wrapper">
@@ -59,13 +60,22 @@ const CountryDetails = ({ country }) => (
 
 const mapStateToPropsCountryDetails = (state, ownProps) => {
   const countryName = ownProps.match.params.countryCountry;
+  const countries = state.dataState.data.Countries;
+
   return {
-    country: state.dataState.data.Countries.find(country => country.Country === countryName),
+    country: countries.find(country => country.Country === countryName),
   };
 };
+
+const mapDispatchToPropsCountryList = dispatch => ({
+  fetchData: () => dispatch(doFetchData()),
+});
 
 CountryDetails.propTypes = {
   country: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-export default connect(mapStateToPropsCountryDetails)(CountryDetails);
+export default connect(
+  mapStateToPropsCountryDetails,
+  mapDispatchToPropsCountryList,
+)(CountryDetails);
