@@ -57,13 +57,13 @@ describe('byQuery helper method', () => {
     expect(result).toEqual(Countries);
   });
 
-  test('returns only one object where the country is Ghana', () =>{
+  test('returns only one object where the country is Ghana', () => {
     const result = Countries.filter(byQuery('Ghana'));
     expect(result.length).toEqual(1);
     expect(result[0].Country).toEqual('Ghana');
   });
 
-  test('returns no country if given unmatched country name', () =>{
+  test('returns no country if given unmatched country name', () => {
     const result = Countries.filter(byQuery('Ghana2345'));
     expect(result.length).toEqual(0);
   });

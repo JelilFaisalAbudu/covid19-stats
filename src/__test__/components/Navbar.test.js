@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import '../setup/setupTests'
+import '../setup/setupTests';
 import Navbar from '../../components/Navbar';
 
 const setup = () => shallow(<Navbar />);

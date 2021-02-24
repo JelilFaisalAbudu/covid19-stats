@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import '../setup/setupTests'
+import '../setup/setupTests';
 import Routes from '../../components/Routes';
 
 const setup = () => shallow(<Routes />);
