@@ -4,3 +4,8 @@
   justify-content: space-evenly;
   text-align: center;
 }
+
+.view-details {
+  display: inline-block;
+  width: 100%;
+}
