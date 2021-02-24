@@ -42,7 +42,10 @@ const CountryList = ({
       >
         {countries.filter(byQuery(query)).map(country => (
           <Country key={country.ID} country={country}>
-            <Link to={`/countries/${country.Country}`}>
+            <Link
+              to={`/countries/${country.Country}`}
+              className="view-details"
+            >
               View Details
             </Link>
           </Country>
