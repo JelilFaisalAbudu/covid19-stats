@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './Navbar';
-import ConnectedCountryListContainer from '../containers/CountryListContainer';
+import CountryList from './countryList';
 import CountryDetails from './CountryDetails';
-import store from '../redux/store';
 import Footer from './Footer';
 
 const Routes = () => (
@@ -13,19 +12,11 @@ const Routes = () => (
     </header>
     <main>
       <Switch>
-        <Route exact path="/" component={ConnectedCountryListContainer} />
+        <Route exact path="/" component={CountryList} />
         <Route
-          path="/Countries/:countryCountry"
-          render={({ match }) => {
-            const { dataState } = store.getState();
-            return (
-              <CountryDetails
-                country={
-          dataState.data.Countries.find(country => country.Country === match.params.countryCountry)
-        }
-              />
-            );
-          }}
+          exact
+          path="/countries/:countryCountry"
+          component={CountryDetails}
         />
       </Switch>
     </main>

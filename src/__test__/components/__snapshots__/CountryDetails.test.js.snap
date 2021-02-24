@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Country Details renders the country details component correctly 1`] = `ShallowWrapper {}`;
