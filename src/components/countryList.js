@@ -53,7 +53,7 @@ const CountryList = ({
 };
 
 const mapStateToPropsCountryList = state => ({
-  Countries: state.dataState.data.Countries,
+  countries: state.dataState.data.Countries,
   loading: state.dataState.loading,
   error: state.dataState.error,
 });

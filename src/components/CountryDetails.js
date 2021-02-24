@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../css/CountryDetails.css';
 
@@ -51,18 +51,16 @@ const CountryDetails = ({ country }) => (
         </tr>
       </tbody>
     </table>
-    <Router>
-      <Link to="/">
-        <button type="button" className="back-button">Back</button>
-      </Link>
-    </Router>
+    <Link to="/">
+      <button type="button" className="back-button">Back</button>
+    </Link>
   </div>
 );
 
 const mapStateToPropsCountryDetails = (state, ownProps) => {
   const countryName = ownProps.match.params.countryCountry;
   return {
-    country: state.data.find(country => country.Country === countryName),
+    country: state.dataState.data.Countries.find(country => country.Country === countryName),
   };
 };
 

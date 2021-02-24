@@ -14,6 +14,7 @@ const Routes = () => (
       <Switch>
         <Route exact path="/" component={CountryList} />
         <Route
+          exact
           path="/countries/:countryCountry"
           component={CountryDetails}
         />
